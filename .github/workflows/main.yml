@@ -27,10 +27,7 @@ jobs:
 
       - name: Copy Dependencies
         run: |
-          for dir in @svgdotjs furls gif.js; do
-            mkdir -p build/node_modules/$dir/
-            cp -r node_modules/$dir/ build/node_modules/
-          done
+          cp -r node_modules/ build/node_modules/
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
