@@ -11,14 +11,14 @@ exports.pug = pug = ->
     # working around bug that <label> and <input> add extra spaces
     # in pretty mode
   .pipe gulpChmod 0o644
-  .pipe gulp.dest './'
+  .pipe gulp.dest './build/'
 
 ## npm run coffee / npx gulp coffee: builds index.js from index.coffee etc.
 exports.coffee = coffee = ->
   gulp.src ['index.coffee', 'pieces.coffee'], ignore: 'gulpfile.coffee'
   .pipe gulpCoffee()
   .pipe gulpChmod 0o644
-  .pipe gulp.dest './'
+  .pipe gulp.dest './build/'
 
 ## npm run build / npx gulp build: all of the above
 exports.build = build = gulp.series pug, coffee

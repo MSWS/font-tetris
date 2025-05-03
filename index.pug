@@ -4,9 +4,9 @@ html
     title Tetris Font
     script(type="text/javascript", src="node_modules/@svgdotjs/svg.js/dist/svg.min.js")
     script(type="text/javascript", src="node_modules/furls/furls.js")
-    script(type="text/javascript", src="font7.js")
-    script(type="text/javascript", src="pieces.js")
-    script(type="text/javascript", src="index.js")
+    script(type="text/javascript", src="./font7.js")
+    script(type="text/javascript", src="./pieces.js")
+    script(type="text/javascript", src="./index.js")
     script(type="text/javascript").
       if (/[?&]hud=0/.test(window.location.search)) // avoid blinking
         document.documentElement.classList.add('hud-false');
@@ -71,7 +71,7 @@ html
             br
             label(for="speed") Speed:
             | &nbsp;
-            input#speed(type="range", min="0", max="10", step="1", value="0")
+            input#speed(type="range", min="0", max="10", step="1", value="5")
           input#puzzle(type="checkbox")
           label(for="puzzle") Puzzle font
           br
@@ -84,10 +84,8 @@ html
           input#center(type="checkbox")
           label(for="center") Rotation center
           br
-          input#floor(type="checkbox", checked)
+          input#floor(type="checkbox")
           label(for="floor") Bottom floor
-          br
-          input#hud(type="checkbox", checked)
 
     p
 
