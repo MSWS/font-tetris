@@ -23,10 +23,12 @@ jobs:
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
+          bun run font || true
           bun run build
 
       - name: Copy Dependencies
         run: |
+          cp font*.js build/
           cp -r node_modules/ build/node_modules/
 
       - name: Upload Artifacts
